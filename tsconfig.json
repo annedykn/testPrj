@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 컴파일 시  /build에 생성되는 JS 버전                            
+    "lib": [ // 컴파일 할 때 포함될 라이브러리 목록.
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],           
+    "allowJs": true, // 컴파일 시 Js도 Ts와 함께 컴파일할 것인가?
+    "skipLibCheck": true, // 라이브러리도 타입체크를 해줄 것인가?(매번) 우리는 true 해 놨는데 이유가 뭔지 궁금하다. 라이브러리에도 필요할까?
+    "esModuleInterop": true, 
+    //  ⬆️ Ts의 react는 export default를 갖고있지 않아서
+    //  import React from 'react'; (X) import * as React from 'react'; (O) import React = require('react'); (O)
+    //  첫번째 방법으로 import가 가능(O) 해지도록 하는 옵션.  
+    "strict": true,  // 엄격한 타입 검사. ts를 사용한다면 true로.(그렇지 않다면 의미 퇴색됨)
+    "forceConsistentCasingInFileNames": true,  
+    // 파일명 대소문자 변경 시 true면 같은 파일이라고 인정해주지 않음. 파일명 /SignupModal => signUpmodal. (X) false일경우 인정해줌.                  
+    "noFallthroughCasesInSwitch": true, // switch 구문을 쓰면서 자주하는 실수를 잡아준다.(오류메세지로)
+    "moduleResolution": "node", // 모듈 해석 방법 설정
+    "resolveJsonModule": true,
+    "module": "esnext",  // CommonJs ? ESModule ? 모듈 코드 "생성"시 어떤 버전?
+    "isolatedModules": true, // 모듈 코드 "해석" 시 어떤 버전?
+    "noEmit": false, // 컴파일러가 결과 파일을 Js등으로 내보낼지 여부
+    "jsx": "preserve", // Jsx 코드를 어떻게 컴파일할지. preserve는
+    "baseUrl": "src" // 맨 위 루트 설정!
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules",
+    "./dist"
+  ]
+}
