@@ -1,9 +1,9 @@
 import React from "react";
+import OneToFifty from "components/OneToFifty";
 
 const App = () => (
   <>
-    <h1>React without CRA...</h1>
-    <div>가나다</div>
+    <OneToFifty />
   </>
 );
 
