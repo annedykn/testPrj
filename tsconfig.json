@@ -22,14 +22,16 @@
     "isolatedModules": true, // 모듈 코드 "해석" 시 어떤 버전?
     "noEmit": false, // 컴파일러가 결과 파일을 Js등으로 내보낼지 여부
     "jsx": "preserve", // Jsx 코드를 어떻게 컴파일할지. preserve는
-    "baseUrl": "src" // 맨 위 루트 설정!
+    "baseUrl": "src", // 맨 위 루트 설정!
+    "outDir": "build"
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
   ],
-  "exclude": [
+  "exclude": [ // 컴파일 대상 제외 옵션
     "node_modules",
-    "./dist"
+    "./dist",
   ]
 }

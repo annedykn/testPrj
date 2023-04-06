@@ -1,5 +1,5 @@
 import React from "react";
-import OneToFifty from "components/OneToFifty";
+import OneToFifty from "./components/OneToFifty";
 
 const App = () => (
   <>
