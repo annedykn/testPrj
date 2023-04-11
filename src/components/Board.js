@@ -19,5 +19,4 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  background: linear-gradient(#ccc, #eee);
 `;

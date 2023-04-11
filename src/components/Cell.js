@@ -12,10 +12,14 @@ export default function Cell({ num, handleClick }) { // board 에게서 받은 �
 };
 
 const Container = styled.div`
-  border: 1px solid gray;
+  margin: 1px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  color: #eee;
+  font-size: 26px;
+  background: #e66465;
 `;

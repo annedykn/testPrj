@@ -41,30 +41,36 @@ export default function OneToFifty() { // onetofifty 함수를 만든다
 
   return (
     <Container>
-      <Board numbers={numbers} handleClick={handleClick} /> 
-      {/* Board.js에 numbers 의 상태를 넘기고 handleClick 함수를 넘긴다. */}
-      {gameOn ? (
-        // 게임 중 이라는 상태값을 가져와 삼항연산자 사용 
-        <Timer /> // 게임 중이면 Timer 컴포넌트 불러오기
-      ) : (
-        <StartButton onClick={startGame}>start</StartButton> // 게임 중이 아니면 클릭시 startGame을 실행시킬 버튼 생성
-      )}
+      <Wrapper>
+        <Board numbers={numbers} handleClick={handleClick} /> 
+        {/* Board.js에 numbers 의 상태를 넘기고 handleClick 함수를 넘긴다. */}
+        {gameOn ? (
+          // 게임 중 이라는 상태값을 가져와 삼항연산자 사용 
+          <Timer /> // 게임 중이면 Timer 컴포넌트 불러오기
+        ) : (
+          <StartButton onClick={startGame}>start</StartButton> // 게임 중이 아니면 클릭시 startGame을 실행시킬 버튼 생성
+        )}
+      </Wrapper>
     </Container>
   );
 };
 
 const shuffleArray = array => { // array를 인자로 넘기는 변수
   for (let i = array.length - 1; i > 0; i--) { // i는 배열의 길이 - 1 (즉 배열과 같은 숫자)이고, 배열은 1~25까지 있고 후처리로 50을 만들어주는듯!! 
-    let j = Math.floor(Math.random() * (i + 1)); // 아무튼 1~25까지 인덱스에 랜덤한 1~25 사이의 수를 부여해주는 식
-    [array[i], array[j]] = [array[j], array[i]]; // 이하생략
+    let j = Math.floor(Math.random() * (i + 1)); // 1~25까지 인덱스에 랜덤한 1~25 사이의 수를 부여해주는 식
+    [array[i], array[j]] = [array[j], array[i]]; // 위의 식을 이,,, ,,, 수학적으로 처리
   }
   return array; // 배열 반환
 }
 
-
 const Container = styled.div`
+
+`;
+
+const Wrapper = styled.div`
   width: 600px;
-  height: 800px;
+  height: 100vh;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column-reverse;
@@ -76,5 +82,10 @@ const StartButton = styled.button`
   margin-bottom: 30px;
   width: 100px;
   height: 50px;
+  border-style: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #ccc;
 `;
 
