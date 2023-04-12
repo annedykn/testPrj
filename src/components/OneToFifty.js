@@ -42,7 +42,7 @@ export default function OneToFifty() { // onetofifty 함수를 만든다
   return (
     <Container>
       <Wrapper>
-        <Board numbers={numbers} handleClick={handleClick} /> 
+        <Board numbers={numbers} handleClick={handleClick} />
         {/* Board.js에 numbers 의 상태를 넘기고 handleClick 함수를 넘긴다. */}
         {gameOn ? (
           // 게임 중 이라는 상태값을 가져와 삼항연산자 사용 
@@ -68,7 +68,6 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 600px;
   height: 100vh;
   margin: 0 auto;
   box-sizing: border-box;
@@ -80,12 +79,13 @@ const Wrapper = styled.div`
 
 const StartButton = styled.button`
   margin-bottom: 30px;
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: 56px;
   border-style: none;
   border-radius: 6px;
   color: #fff;
-  font-size: 16px;
-  background-color: #ccc;
+  font-size: 18px;
+  background-color: #222;
+  box-shadow: 0 0 10px -1px #555;
 `;
 

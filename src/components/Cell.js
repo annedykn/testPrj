@@ -13,13 +13,24 @@ export default function Cell({ num, handleClick }) { // board 에게서 받은 �
 
 const Container = styled.div`
   margin: 1px;
-  border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #eee;
-  font-size: 26px;
-  background: #e66465;
+  font-size: 18px;
+  background: #222;
+  box-shadow: 0 0 10px -1px #555;
+
+  :hover {
+    background-color: #e66465;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    transform: scale(1.1);
+  }
+
+  :active {
+    transform: scale(0.8);
+  }
 `;

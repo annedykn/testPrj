@@ -27,13 +27,16 @@ export default function Timer() { // Timer라는 함수 생성
 }
 
 const Container = styled.div` 
-  margin-top: 30px;
-  width: 100px;
+  margin-bottom: 34px;
+  width: 150px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  position: relative;
+  right: 5px;
+  font-size: 24px;
+  text-shadow: 0 0 10px #555;
 `;
 
 const Front = styled.div` 
